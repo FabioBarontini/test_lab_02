@@ -19,4 +19,9 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: 'Message that will be displayed on users first issue'
         pr-message: 'Message that will be displayed on users first pull request'
-        pr-message: 'Message that will be displayed on users first pull request'
+    - uses: actions/checkout@v2
+    - name: Build step1        
+      run: echo "The ${{ github.repository }} repository has been cloned to the runner on dir ${{ github.workspace }}."
+    - name: List files in the repository
+      run: |
+          ls ${{ github.workspace }}
